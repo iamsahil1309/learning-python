@@ -1,4 +1,4 @@
-# lists 
+# lists  mutable
 ingridients  = [ "ginger", "clove", "tumeric"]
 
 # add in a lists 

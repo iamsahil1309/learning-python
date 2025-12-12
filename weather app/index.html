@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEATHER APP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="card weather-preview">
+        <div>
+          <div class="top-row">
+            <div class="location-input" style="flex: 1">
+              <div class="search">
+                <input
+                  id="city"
+                  type="text"
+                  placeholder="Enter city (e.g. Seoul, Tokyo, Mumbai)"
+                  value="Mumbai"
+                />
+                <button id="searchBtn" class="search-btn">Search</button>
+              </div>
+              <div style="margin-left: 8px; text-align: right; min-width: 95px">
+                <div class="meta" id="time">--</div>
+                <div class="meta" id="date">--</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              margin-top: 26px;
+              display: flex;
+              gap: 20px;
+              align-items: center;
+            "
+          >
+            <div class="big-temp" style="flex: 1">
+              <div>
+                <div class="temp-value" id="temp">
+                  --<span class="temp-unit">°C</span>
+                </div>
+                <div
+                  style="color: var(--muted); font-size: 18px; margin-top: 6px"
+                  id="desc"
+                >
+                  --
+                </div>
+              </div>
+            </div>
+
+            <div class="weather-icon" aria-hidden="true">
+              <div class="sun" id="sun"></div>
+              <div class="cloud" id="cloud"></div>
+            </div>
+          </div>
+
+          <div class="details" style="margin-top: 18px">
+            <div class="small-card">
+              Humidity<br /><strong id="hum">--%</strong>
+            </div>
+            <div class="small-card">
+              Wind<br /><strong id="wind">-- m/s</strong>
+            </div>
+            <div class="small-card">
+              Feels like<br /><strong id="feels">--°C</strong>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+          "
+        >
+          <div class="foot">
+            Powered by OpenWeatherMap • Replace the API key in the script
+          </div>
+          <div id="status" class="foot">Ready</div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

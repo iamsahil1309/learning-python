@@ -4,5 +4,5 @@ input_str = input("enter the string value : ")
 reverse_str = ""
 
 for char in input_str :
-    reverse_str = input_str[::-1]
+    reverse_str = char + reverse_str 
 print(f"{reverse_str}")

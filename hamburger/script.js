@@ -1,7 +1,6 @@
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+const burger = document.getElementById("burger")
+const nav = document.querySelector("nav")
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navLinks.classList.toggle("active");
-});
+burger.addEventListener("click", () => {
+  nav.style.transform = "translateX(0px)"
+})

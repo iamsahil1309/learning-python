@@ -6,7 +6,6 @@ class Car :
     def full_name(self) :
         return f"{self.__brand} {self.model}"
     
-    # encapsulation 
     def get_brand(self):
         return self.__brand
 
@@ -22,6 +21,6 @@ print(my_car.model)
 print(my_car.full_name())  
 
 my_electric_car = ElectricCar("Tesla", "Model S", "85kwh")
-# print(my_electric_car.brand)
+print(my_electric_car.__brand)
 print(my_electric_car.battery_size)
 print(my_electric_car.full_name())

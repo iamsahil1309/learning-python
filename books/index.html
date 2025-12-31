@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Library</title>
+  <style>
+    .library {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .book-card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    form {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="newBookBtn">New Book</button>
+
+  <form id="bookForm" hidden>
+    <input type="text" id="title" placeholder="Title" required />
+    <input type="text" id="author" placeholder="Author" required />
+    <input type="number" id="pages" placeholder="Pages" required />
+    <label>
+      Read?
+      <input type="checkbox" id="read" />
+    </label>
+    <button type="submit">Add Book</button>
+  </form>
+
+  <div class="library" id="library"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

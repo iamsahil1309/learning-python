@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
@@ -8,7 +8,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-Book.prototype.toggleRead = function () {
+Book.prototype.toggle = function () {
   this.read = !this.read;
 };
 
@@ -41,23 +41,24 @@ function displayLibrary() {
 
 document.getElementById("library").addEventListener("click", (e) => {
   const card = e.target.closest(".book-card");
+  console.log(card)
   if (!card) return;
 
   const bookId = card.dataset.id;
   const book = myLibrary.find((b) => b.id === bookId);
 
   if (e.target.classList.contains("remove-book")) {
-    const index = myLibrary.findIndex((b) => b.id === bookId);
-    myLibrary.splice(index, 1);
+    myLibrary = myLibrary.filter((b) => b.id !== bookId);
     displayLibrary();
   }
 
   if (e.target.classList.contains("toggle-read")) {
-    book.toggleRead();
+    book.toggle();
     displayLibrary();
   }
 });
 
+// add books
 const form = document.getElementById("bookForm");
 const newBookBtn = document.getElementById("newBookBtn");
 

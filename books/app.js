@@ -41,7 +41,7 @@ function displayLibrary(){
 
 document.getElementById("library").addEventListener("click",(e) => {
     const card = e.target.closest(".book-card")
-    if (!card) return;
+    if(!card) return;
 
     const bookId = card.dataset.id
     const book = myLibrary.find(b => b.id === bookId)

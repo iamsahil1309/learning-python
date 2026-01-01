@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary = []
 
 function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
@@ -8,58 +8,56 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-Book.prototype.toggle = function () {
-  this.read = !this.read;
-};
-
-function addBookToLibrary(title, author, pages, read) {
-  const newBook = new Book(title, author, pages, read);
-  myLibrary.push(newBook);
+Book.prototype.toggleRead = function() {
+  this.read = !this.read
 }
+
+function addBookToLibrary (title, author, pages, read) {
+  const newBook = new Book(title, author, pages, read)
+  myLibrary.push(newBook)
+}
+
 
 function displayLibrary() {
-  const libraryDiv = document.getElementById("library");
-  libraryDiv.innerHTML = "";
+  const libraryDiv = document.getElementById("library")
+  libraryDiv.innerHTML = ""
 
-  myLibrary.forEach((book) => {
-    const card = document.createElement("div");
-    card.classList.add("book-card");
-    
-    
+  myLibrary.forEach(book => {
+      const card = document.createElement("div");
+      card.classList.add("book-card");
+      card.dataset.id = book.id
 
-    card.innerHTML = `
-      <h3>${book.title}</h3>
-      <p>Author: ${book.author}</p>
-      <p>Pages: ${book.pages}</p>
-      <p>Status: ${book.read ? "Read" : "Not read"}</p>
+      card.innerHTML = `
+      <h2>Title : ${book.title}</h2>
+      <p>Author : ${book.author}</p>
+      <p>Pages : ${book.pages}</p>
+      <p>Status : ${book.read ? "Read" : "Not Read"}</p>
       <button class="toggle-read">Toggle Read</button>
-      <button class="remove-book">Remove</button>
-    `;
-
-    libraryDiv.appendChild(card);
-  });
+      <button class = "remove-book">Delete</button>
+      `
+      libraryDiv.append(card)
+  })
 }
 
-document.getElementById("library").addEventListener("click", (e) => {
-  const card = e.target.closest(".book-card");
-  console.log(card)
-  if (!card) return;
+document.getElementById("library").addEventListener("click",(e) => {
+  const card = e.target.closest(".book-card")
+  if(!card) return
 
-  const bookId = card.dataset.id;
-  const book = myLibrary.find((b) => b.id === bookId);
+  const bookId = card.dataset.id
+  const book = myLibrary.find(b => b.id === bookId)
 
-  if (e.target.classList.contains("remove-book")) {
-    myLibrary = myLibrary.filter((b) => b.id !== bookId);
-    displayLibrary();
+  if(e.target.classList.contains("remove-book")){
+    myLibrary = myLibrary.filter(b => b.id !== bookId)
+    displayLibrary()
   }
 
-  if (e.target.classList.contains("toggle-read")) {
-    book.toggle();
-    displayLibrary();
+  if(e.target.classList.contains("toggle-read")) {
+    book.toggleRead()
+    displayLibrary()
   }
-});
 
-// add books
+})
+
 const form = document.getElementById("bookForm");
 const newBookBtn = document.getElementById("newBookBtn");
 
@@ -68,12 +66,12 @@ newBookBtn.addEventListener("click", () => {
 });
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault(); // prevent page reload
+  e.preventDefault();
 
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
-  const read = document.getElementById("read").checked;
+  const read = document.getElementById("read").value;
 
   addBookToLibrary(title, author, pages, read);
   displayLibrary();

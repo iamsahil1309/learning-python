@@ -5,6 +5,9 @@ class Car :
 
     def get_brand(self) :
         return self.__brand
+    
+    def fuel_type(self) :
+        return "Petrol or Diseal"
 
     def full_name(self) :
         return f"{self.__brand}, {self.model}"
@@ -20,6 +23,9 @@ class ElectricCar(Car) :
         self.battery_size = battery_size
         super().__init__(brand, model)
 
+    def fuel_type(self):
+        return "ELectric Charge"
+
 my_electric_car = ElectricCar("Tesla", "Xs", "85kwh")
 print(my_electric_car.full_name())
 # print(my_electric_car.brand)
@@ -27,4 +33,6 @@ print(my_electric_car.full_name())
 # ENCAPSULATION - To private the attribute and can see when call by a method like getter
 print(my_electric_car.get_brand())
 
-# POLYMORPHISM
+# POLYMORPHISM - demonstrate polymorphism by defining a method fuel_type Car and Electric car classes, but with different behaviors. Same method name in different class but different functianlity.
+print(my_car.fuel_type())
+print(my_electric_car.fuel_type())

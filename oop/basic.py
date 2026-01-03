@@ -1,3 +1,4 @@
+#NOTE: NO IMMEDIATE GARBAGE COLLECTION IN PYTHON
 class Car : 
     total_Car = 0
 
@@ -41,5 +42,5 @@ print(my_car.fuel_type())
 print(my_electric_car.fuel_type())
 
 # CLASS VARIABLES - Add a class variable to Car that keeps track o the number of cars created.
-# show 2 coz second variable is count when use car.totalcar. And always use class name, here it is Car. Dont use object name.
+# show 2 coz second variable is count when use in making electric car coz using samwe reference which is car. And always use class name, here it is Car. Dont use object name.
 print(Car.total_Car) 

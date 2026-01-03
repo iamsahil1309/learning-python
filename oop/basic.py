@@ -44,3 +44,5 @@ print(my_electric_car.fuel_type())
 # CLASS VARIABLES - Add a class variable to Car that keeps track o the number of cars created.
 # show 2 coz second variable is count when use in making electric car coz using samwe reference which is car. And always use class name, here it is Car. Dont use object name.
 print(Car.total_Car) 
+
+#STATIC METHOD - add a static method to the Car class that returns  a general description of a car.

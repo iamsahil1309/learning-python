@@ -1,10 +1,13 @@
 class Car : 
     def __init__(self, brand, model):
-        self.brand = brand
+        self.__brand = brand
         self.model = model 
 
+    def get_brand(self) :
+        return self.__brand
+
     def full_name(self) :
-        return f"{self.brand}, {self.model}"
+        return f"{self.__brand}, {self.model}"
 
 my_car = Car("toyota", "corolla")
 # print(my_car.brand)
@@ -19,4 +22,9 @@ class ElectricCar(Car) :
 
 my_electric_car = ElectricCar("Tesla", "Xs", "85kwh")
 print(my_electric_car.full_name())
-print(my_electric_car.brand)
+# print(my_electric_car.brand)
+
+# ENCAPSULATION - To private the attribute and can see when call by a method like getter
+print(my_electric_car.get_brand())
+
+# POLYMORPHISM

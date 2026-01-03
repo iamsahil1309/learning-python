@@ -1,12 +1,15 @@
 class Car : 
+    total_Car = 0
+
     def __init__(self, brand, model):
         self.__brand = brand
         self.model = model 
+        Car.total_Car += 1
 
-    def get_brand(self) :
+    def get_brand(self) :                            #encapsulation
         return self.__brand
     
-    def fuel_type(self) :
+    def fuel_type(self) :                            #polymorphism
         return "Petrol or Diseal"
 
     def full_name(self) :
@@ -36,3 +39,7 @@ print(my_electric_car.get_brand())
 # POLYMORPHISM - demonstrate polymorphism by defining a method fuel_type Car and Electric car classes, but with different behaviors. Same method name in different class but different functianlity.
 print(my_car.fuel_type())
 print(my_electric_car.fuel_type())
+
+# CLASS VARIABLES - Add a class variable to Car that keeps track o the number of cars created.
+# show 2 coz second variable is count when use car.totalcar. And always use class name, here it is Car. Dont use object name.
+print(Car.total_Car) 

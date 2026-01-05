@@ -22,11 +22,13 @@ class ChaiShop :
         self.chai.prepare()
 
 class FancyShop(ChaiShop) :
-    chai_cls = MasalaChai
+    chai_cls = BaseChai
 
 shop = ChaiShop()
 fancy = FancyShop()
 
 shop.serve()
 fancy.serve()
-fancy.chai.add_spice()
+# fancy.chai.add_spice()
+fancy.chai.prepare()
+fancy.serve()

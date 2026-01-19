@@ -1,6 +1,18 @@
+import json
+
 
 def load_data(): 
-    pass
+    try : 
+        with open('youtube.txt', 'r') as file : 
+            test = json.load(file)
+            return test
+    except FileNotFoundError : 
+        return []
+
+def save_data_helper(videos):
+    with open('youtube.txt', 'w') as file :
+        json.dump(videos, file)
+
 
 def main():
     videos = load_data()
@@ -26,3 +38,6 @@ def main():
                 break
             case _:
                 print("Invalid Choice")
+
+if __name__ == "__main__" :
+    main()

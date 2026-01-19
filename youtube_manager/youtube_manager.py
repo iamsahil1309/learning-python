@@ -13,6 +13,17 @@ def save_data_helper(videos):
     with open('youtube.txt', 'w') as file :
         json.dump(videos, file)
 
+def list_all_videos(videos) :
+    for index, video in enumerate(videos, start=1) :
+        print(f"{index}. {video['name']}, Duration : {video['time']}")
+        print("\n")
+        print("*" * 70)
+
+def add_video(videos) :
+    name = input("Enter your name : ")
+    time = input("Enter video time : ")
+    videos.append({'name' : name, 'time': time})
+    save_data_helper(videos)
 
 def main():
     videos = load_data()

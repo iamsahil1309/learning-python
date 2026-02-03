@@ -6,6 +6,6 @@ client = genai.Client(
 )
 
 response = client.models.generate_content(
-    model="gemini-3-flash-preview", contents="hello, i am sahil"
+    model="gemini-3-flash-preview", contents="hello gemini"
 )
 print(response.text)

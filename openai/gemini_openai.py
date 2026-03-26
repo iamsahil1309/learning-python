@@ -5,7 +5,7 @@ import json
 # load_dotenv()
 
 client = OpenAI(
-    api_key="AIzaSyBWg4wR0Xb6uBtCzf6fa6gXJJS7i-o9Ihs",
+    api_key="AIzaSyBRl_i-n5XO0tpTp691AZNYyNOuG2k8KaQ",
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 
